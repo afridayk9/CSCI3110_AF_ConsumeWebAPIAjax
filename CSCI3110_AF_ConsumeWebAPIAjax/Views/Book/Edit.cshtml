@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+h4 id="bookHeading">Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" id="formBookEdit">
+            <div class="form-group">
+                <label for="Id" class="control-label">Id</label>
+                <input name="Id" id="Id" readonly class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Title" class="control-label">Title</label>
+                <input name="Title" id="Title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Edition" class="control-label">Edition</label>
+                <input name="Edition" id="Edition" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="PublicationYear" class="control-label">
+                    Publication Year
+                </label>
+                <input name="PublicationYear" id="PublicationYear"
+                       class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Book">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/bookEdit.js" type="module" defer></script>
+}
+

@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "All Books";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Edition
+            </th>
+            <th>
+                Publication Year
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="bookTableBody">
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/bookIndex.js" type="module" defer></script>
+}
+
+
+
+
