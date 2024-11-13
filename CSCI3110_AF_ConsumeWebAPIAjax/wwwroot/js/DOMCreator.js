@@ -17,11 +17,16 @@ export class DOMCreator {
 
     createImageTD(src, alt) {
         const td = document.createElement("td");
+        const img = this.createImg(src, alt);
+        td.appendChild(img);
+        return td;
+    }
+
+    createImg(src, alt) {
         const img = document.createElement("img");
         img.setAttribute("src", src);
         img.setAttribute("alt", alt);
-        td.appendChild(img);
-        return td;
+        return img;
     }
 
     createTextLink(url, text) {
@@ -42,4 +47,8 @@ export class DOMCreator {
         element.appendChild(document.createTextNode(text));
     }
 
+    setElementValue(elementId, value) {
+        const element = document.querySelector(elementId);
+        element.value = value;
+    }
 }

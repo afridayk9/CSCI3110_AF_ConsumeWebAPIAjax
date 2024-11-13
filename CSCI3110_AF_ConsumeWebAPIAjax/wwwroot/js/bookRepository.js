@@ -48,7 +48,17 @@ export class BookRepository {
         return await response.text();
     }
 
-
+    async deleteBook(id) {
+        const address = `${this.#baseAddress}/delete/${id}`;
+        console.log("Delete URL:", address); 
+        const response = await fetch(address, {
+            method: "delete"
+        });
+        if (!response.ok) {
+            throw new Error("There was an HTTP error deleting the book data.");
+        }
+        return await response.text();
+    }
 
 
 }

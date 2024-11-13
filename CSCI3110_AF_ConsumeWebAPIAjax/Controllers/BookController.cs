@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace CSCI3110_AF_ConsumeWebAPIAjax.Controllers
 {
@@ -20,6 +21,11 @@ namespace CSCI3110_AF_ConsumeWebAPIAjax.Controllers
         }
 
         public IActionResult Edit() 
+        {
+            return View();
+        }
+
+        public IActionResult Delete(int id)
         {
             return View();
         }
