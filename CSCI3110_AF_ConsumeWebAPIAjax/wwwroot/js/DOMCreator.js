@@ -51,4 +51,13 @@ export class DOMCreator {
         const element = document.querySelector(elementId);
         element.value = value;
     }
+
+    createSmallButtonLink(url, text, btnType = "primary") {
+        const a = document.createElement("a");
+        a.setAttribute("href", url);
+        a.setAttribute("class", `btn btn-${btnType} btn-sm`)
+        a.appendChild(document.createTextNode(text));
+        return a;
+    }
+
 }

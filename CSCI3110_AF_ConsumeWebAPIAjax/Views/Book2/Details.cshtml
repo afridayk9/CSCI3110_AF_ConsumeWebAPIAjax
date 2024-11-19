@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Id
+        </dt>
+        <dd class="col-sm-10" id="bookId">
+        </dd>
+        <dt class="col-sm-2">
+            Title
+        </dt>
+        <dd class="col-sm-10" id="bookTitle">
+        </dd>
+        <dt class="col-sm-2">
+            Edition
+        </dt>
+        <dd class="col-sm-10" id="bookEdition">
+        </dd>
+        <dt class="col-sm-2">
+            Publication Year
+        </dt>
+        <dd class="col-sm-10" id="bookPublicationYear">
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Book">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/bookDetails.js" type="module" defer></script>
+}
+

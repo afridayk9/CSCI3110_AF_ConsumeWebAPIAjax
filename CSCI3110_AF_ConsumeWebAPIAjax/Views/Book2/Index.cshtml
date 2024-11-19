@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "All Books";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <button type="button" class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="createBookModal">Create New</button>
+</p>
+<div class="modal-body">
+    <partial name="_CreateBookModal" model="@Model" />
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Edition
+            </th>
+            <th>
+                Publication Year
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="bookTableBody">
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/bookIndex2.js" type="module" defer></script>
+}
+
+
+
+
