@@ -7,10 +7,10 @@
 <p>
     <button type="button" class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="createBookModal">Create New</button>
+        data-bs-target="#createBookModal">Create New</button>
 </p>
 <div class="modal-body">
-    <partial name="_CreateBookModal" model="@Model" />
+    <partial name="_CreateBookModal" model="@new Book()" />
 </div>
 <table class="table">
     <thead>
@@ -35,6 +35,9 @@
 </table>
 
 @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     <script src="~/js/bookIndex2.js" type="module" defer></script>
 }
 

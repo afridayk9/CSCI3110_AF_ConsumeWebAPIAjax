@@ -26,6 +26,15 @@ function createBookTR(book) {
     return tr;
 }
 
+function convertFormDataToObject(formData) {
+    const obj = {};
+    for (const [key, value] of formData.entries()) {
+        if (key === "__RequestVerificationToken") continue;
+        obj[key] = value;
+    }
+    return obj;
+}
+
 function createTDWithLinks(id) {
     const td = document.createElement("td");
     td.appendChild(domCreator.createSmallButtonLink(`/book/edit/${id}`, "Edit", "warning"));

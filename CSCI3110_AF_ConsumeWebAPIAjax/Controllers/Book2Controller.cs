@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CSCI3110_AF_ConsumeWebAPIAjax.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CSCI3110_AF_ConsumeWebAPIAjax.Controllers
 {
@@ -14,9 +15,13 @@ namespace CSCI3110_AF_ConsumeWebAPIAjax.Controllers
             return View();
         }
 
-        public IActionResult Create()
+        public IActionResult Create(Book book)
         {
-            return View();
+            if (ModelState.IsValid) 
+            {
+                return Json(new { message = "success", book });
+            }
+            return Json("fail");
         }
 
         public IActionResult Edit()
