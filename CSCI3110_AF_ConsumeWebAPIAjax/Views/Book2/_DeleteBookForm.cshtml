@@ -1,0 +1,24 @@
+﻿@model Book
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="row mb-3">
+    <label asp-for="Title" class="col-2 col-form-label control-label"></label>
+    <div class="col-5">
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="Edition" class="col-2 col-form-label control-label"></label>
+    <div class="col-5">
+        <input asp-for="Edition" class="form-control" />
+        <span asp-validation-for="Edition" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="PublicationYear" class="col-2 col-form-label control-label"></label>
+    <div class="col-5">
+        <input asp-for="PublicationYear" class="form-control" />
+        <span asp-validation-for="PublicationYear" class="text-danger"></span>
+    </div>
+</div>

@@ -16,6 +16,30 @@ books.forEach((book) => {
     console.log(book);
 });
 
+
+const createBookModalDOM = document.querySelector("#createBookModal");
+const createBookModal = new bootstrap.Modal(createBookModalDOM);
+
+const createBookForm = document.querySelector("#createBookForm");
+    createBookForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+   
+    await submitWithAjax(createBookForm);    
+});
+
+async function submitWithAjax(createBookForm) {
+    
+    const formData = new FormData(createBookForm);     
+    const result = await bookRepo.create(formData);  
+
+    
+    console.log(result);
+
+    bookTableBody.appendChild(createBookTR(result));
+
+    createBookModal.hide();
+}
+
 function createBookTR(book) {
     const tr = document.createElement("tr");
     tr.appendChild(domCreator.createTextTD(book.id));
@@ -26,21 +50,13 @@ function createBookTR(book) {
     return tr;
 }
 
-function convertFormDataToObject(formData) {
-    const obj = {};
-    for (const [key, value] of formData.entries()) {
-        if (key === "__RequestVerificationToken") continue;
-        obj[key] = value;
-    }
-    return obj;
-}
 
 function createTDWithLinks(id) {
     const td = document.createElement("td");
-    td.appendChild(domCreator.createSmallButtonLink(`/book/edit/${id}`, "Edit", "warning"));
+    td.appendChild(domCreator.createButton(`/book/edit/${id}`, "Edit", "warning"));
     td.appendChild(document.createTextNode("  "));
-    td.appendChild(domCreator.createSmallButtonLink(`/book/details/${id}`, "Details", "info"));
+    td.appendChild(domCreator.createButton(`/book/details/${id}`, "Details", "info"));
     td.appendChild(document.createTextNode("  "));
-    td.appendChild(domCreator.createSmallButtonLink(`/book/delete/${id}`, "Delete", "danger"));
+    td.appendChild(domCreator.createButton(`/book/delete/${id}`, "Delete", "danger"));
     return td;
 }

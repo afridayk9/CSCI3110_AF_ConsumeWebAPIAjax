@@ -1,0 +1,26 @@
+﻿@model Book
+
+<div class="modal fade" id="deleteBookModal" tabindex="-1" role="dialog"
+     aria-labelledby="deleteBookModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div id="mainContent" class="modal-content">
+            <form id="deleteBookForm" asp-action="Delete">
+
+                <div class="modal-header">
+                    <h5 class="modalTitle" id="deleteBookModalTitle">Delete Book</h5>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <partial name="_DeleteBookForm" model="@Model" />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
