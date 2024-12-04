@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/CSCI3110_AF_ConsumeWebAPIAjax/Views/Book2/_CreateBookForm.cshtml
+/CSCI3110_AF_ConsumeWebAPIAjax/Models/Book.cs
+/CSCI3110_AF_ConsumeWebAPIAjax/Models/Book.cs
